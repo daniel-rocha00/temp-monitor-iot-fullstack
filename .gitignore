@@ -1,0 +1,15 @@
+#database
+data/*.db
+
+#firmware simulation
+sensor
+*.o
+*.out
+
+#charts
+output/*.png
+
+#python
+__pycache__/
+*.py[cod]
+*$py.class
