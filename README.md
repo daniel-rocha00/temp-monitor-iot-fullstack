@@ -57,7 +57,7 @@ During development, I identified a **Stochastic Drift issue** in the initial tem
 | 1. The Problem: Stochastic Drift | 2. The Solution: Mean-Reversion |
 | :---: | :---: |
 | <p align="center"><img src="assets/stochastic-drift-issue.png" width="800"></p> | <p align="center"><img src="assets/ou-process-correction.png" width="800"></p> |
-| *Random Walk model: Values diverge unrealistically towards -$\infty$.* | *OU Process: Even starting at $200^\circ C$, values revert to the $25^\circ C$ mean.* |
+| *Random Walk model: Values diverge unrealistically towards -∞* | *OU Process: Even starting at 200°C, values revert to the 25°C mean.* |
 <br>
 
 The biggest challenge for this simulator was ensuring that the generated temperature was realistic.
