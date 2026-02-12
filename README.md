@@ -52,7 +52,7 @@ During development, I identified a **Stochastic Drift issue** in the initial tem
 
 ## **V1.1 - Stochastic Drift Fixed!! 📉**
 
-### Temperature Simulation: Random Wals vs. Ornstein-Uhlenbeck  
+### Temperature Simulation: Random Walk vs. Ornstein-Uhlenbeck  
 
 | 1. The Problem: Stochastic Drift | 2. The Solution: Mean-Reversion |
 | :---: | :---: |
@@ -64,20 +64,40 @@ The biggest challenge for this simulator was ensuring that the generated tempera
 
 Initially, the sensors utilized a simple **Random Walk model**. However, the values **diverged unrealistically**, dropping to $-30^\circ C$ within just a few minutes of simulation.
 
-By implementing an adaptation of the **Ornstein-Uhlenbeck process**, the system achieved the necessary stability. During the validation phase, I forced a sensor to start at $200^\circ C$ to test the algorithm's recovery. As observed, the algorithm "pulls" the value drastically back toward the mean of $25^\circ C$, maintaining **stable and consistent readings thereafter**.
+By implementing an discreet version of the **Ornstein-Uhlenbeck process**, the system achieved the necessary stability. During the validation phase, I forced a sensor to start at $200^\circ C$ to test the algorithm's recovery. As observed, the algorithm "pulls" the value drastically back toward the mean of $25^\circ C$, maintaining **stable and consistent readings thereafter**.
+
+<div align="center">
+
+ ### Mean-Reversion Logic for Thermal Stability
+
+<p><img src="assets/mean-reversion-algorithm.png" width="800"></p>
+<br>
+
+| Component | Function |
+| :---: | :-- |
+| **temperature** | Is The Metric. |
+| **25.5** | Mean Target Value. |
+| **(25.5 - temperature)** | The Current Distance Between The Temperature and The Mean Target. |
+| **0.01** | Defines The Reversion Speed. |
+| **(rand() % 11 - 5) * 0.05** | Diffusion Term adds random noise. |
+</div>
 
 ## ⚙️ Setup
 
 ### Prerequisites
-- C++ Compiler;
-- Python3;
-- Paho MQTT C++ library;
-- Mosquitto Broker;
-- SQLite3;
-- Pandas;
-- Matplotlib;
-- Nlohmann JSON;
-- Recommended: This project is optimized for Linux-based environments.
+
+| Component | 
+| :---: | 
+| **C++ Compiler** |
+| **Python3** |
+| **Paho MQTT C++ library** | 
+| **Mosquitto Broker** |
+| **SQLite3** | 
+| **Pandas** | 
+| **Matplotlib** | 
+| **Nlohmann JSON** | 
+
+**Recommended: This project is optimized for Linux-based environments.**
 
 ### How to run
 
