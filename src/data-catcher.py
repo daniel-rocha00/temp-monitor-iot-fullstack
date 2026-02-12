@@ -3,7 +3,7 @@ import json
 import sqlite3
 
 
-connection = sqlite3.connect("../data/sensor-data.db")
+connection = sqlite3.connect("./data/sensor-data.db")
 cursor = connection.cursor()
 
 cursor.execute('''

@@ -97,7 +97,7 @@ By implementing an adaptation of the **Ornstein-Uhlenbeck process**, the system 
 
 **3. Simulate a Sensor**
 - Compile the program:
-`g++ -Wall -std=c++17 sensor-engine.cpp -o sensor -lmosquitto`
+`g++ -Wall -std=c++17 src/sensor-engine.cpp -o sensor -lmosquitto`
 
 - Then run with parameters:
 `./sensor [SENSOR_ID] [INITIAL_TEMPERATURE]`
